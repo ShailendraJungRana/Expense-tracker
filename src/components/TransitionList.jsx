@@ -4,9 +4,9 @@ const TransitionList = () => {
   return (
     <div>
       <h3>History</h3>
-      <ul id='list' class="list">
-        <li class="minus">Cash <span>-$400</span>
-        <button class='delete-btn'>
+      <ul id='list' className="list">
+        <li className="minus">Cash <span>-$400</span>
+        <button className='delete-btn'>
         X
         </button>
         </li>

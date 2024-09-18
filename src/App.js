@@ -4,6 +4,8 @@ import  Balance  from './components/Balance';
 import IncomeExpense  from './components/IncomeExpenses';
 import TransitionList from './components/TransitionList';
 import Transaction from './components/Transaction';
+import { GlobalProvider } from './components/GlobalState';
+import { GlobalContext } from './components/GlobalState';
 function App() {
   return (
     <div>
@@ -13,6 +15,7 @@ function App() {
         <IncomeExpense/>
         <TransitionList/>
         <Transaction/>
+        {/* <GlobalProvider/> */}
         </div>
     </div>
   );
