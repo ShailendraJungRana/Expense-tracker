@@ -2,22 +2,22 @@ import Header  from './components/Header';
 import './App.css';
 import  Balance  from './components/Balance';
 import IncomeExpense  from './components/IncomeExpenses';
-import TransitionList from './components/TransitionList';
-import Transaction from './components/Transaction';
-import { GlobalProvider } from './components/GlobalState';
-import { GlobalContext } from './components/GlobalState';
+import TransactionList from './components/TransactionList';
+import AddTransaction from './components/AddTransaction';
+import { GlobalProvider } from './context/GlobalState';
+
+
 function App() {
   return (
-    <div>
+    <GlobalProvider>
         <Header/>
-        <div class='container'>
-          <Balance/>
+        <div className='container'>
+        <Balance/>
         <IncomeExpense/>
-        <TransitionList/>
-        <Transaction/>
-        {/* <GlobalProvider/> */}
+        <TransactionList/>
+        <AddTransaction/>
         </div>
-    </div>
+    </GlobalProvider>
   );
 }
 

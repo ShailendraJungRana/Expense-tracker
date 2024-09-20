@@ -14,10 +14,11 @@ import AppReducer from './AppReducer'
     export const GlobalContext = createContext(initialState);
 
     //provider component
-    export const GlobalPovider = ({children}) => {
+    export const GlobalProvider = ({children}) => {
         const [state, dispatch] = useReducer(AppReducer, initialState);
         return(
-            <GlobalContext.Provider value={{ state, dispatch }}>
+            <GlobalContext.Provider value={{ 
+                transactions: state.transactions }}>
             {children}
           </GlobalContext.Provider>
         );

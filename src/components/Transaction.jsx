@@ -1,26 +1,16 @@
-
-import React,{useState} from 'react'
-
-const Transaction = () => {
-  const [text, setText] = useState('');
-  const [amount, setAmount] = useState('0');
+import React from 'react'
+import Transactions from '../components/TransitionList';
+const Transaction = ({transactions}) => {
+    const sign = transactions.amount < 0 ? 'minus' : 'plus';
   return (
-    <div>
-      <h3>Add new transaction</h3>
-      <form >
-        <div className="form-control">
-          <label htmlFor="text">Text</label>
-          <input type="text" value={text} onChange={(e)=>setText(e.target.value)}  placeholder='Enter text ... '/>
-        </div>
-        <div className='form-control'>
-          <label htmlFor='amount'>Amount<br/>
-          (negative-expense, postive-income)</label>
-          <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} placeholder='Enter amount ...'/>
-        </div>
-        <button className='btn'>Add transaction</button>
-      </form>
-    </div>
+    <li className={transactions.amount < 0 ? "minus" : "pluse"}>
+            {transactions.text} <span>{sign}${Math.abs(transactions.amount)}</span>
+          <button className='delete-btn'>
+          X
+          </button>
+          </li>
   )
 }
+
 
 export default Transaction
